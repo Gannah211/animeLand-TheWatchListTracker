@@ -1,0 +1,100 @@
+:root {
+    --brite-primary: #a2e436;
+    --brite-accent: #f56565;
+    --brite-card-bg: rgba(255, 255, 255, 0.82);
+    --brite-overlay: rgba(240, 244, 255, 0.55);
+    --font-body: 'Nunito', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../assets/bg2.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Light frosted overlay — keeps bg visible but matches Brite's white/light tone */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--brite-overlay);
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+    z-index: 0;
+}
+
+body > * { position: relative; z-index: 1; }
+
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+}
+
+.welcome-card {
+    background: var(--brite-card-bg);
+    border: 1px solid rgba(13, 110, 253, 0.15);
+    border-radius: 1.25rem;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow:
+            0 4px 24px rgba(13, 110, 253, 0.1),
+            0 1px 4px rgba(0,0,0,0.06);
+    animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Brite-style colorful top bar */
+.welcome-card::before {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 80px;
+    margin: 0 auto 1.75rem;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--brite-primary), var(--brite-accent));
+}
+
+.welcome-card .greeting {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 800;
+    color: var(--brite-primary);
+    margin-bottom: 0.5rem;
+}
+
+.welcome-card .subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 1.75rem;
+}
+.dots span {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+}
+.dots span:nth-child(1) { background: var(--brite-primary); opacity: 0.9; }
+.dots span:nth-child(2) { background: var(--brite-accent); opacity: 0.6; }
+.dots span:nth-child(3) { background: var(--brite-primary); opacity: 0.3; }
+.text-outline {
+    -webkit-text-stroke: 1px #60676d; /* color of the outline */
+}
