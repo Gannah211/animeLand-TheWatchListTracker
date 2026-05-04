@@ -19,7 +19,7 @@ public function getUserInfo(){
 public function getUserWatchList(){
     $user_id = $_SESSION['userID'];
     $DB = new DB();
-    $stmt ='SELECT a.title, au.watch_status, a.id FROM user_anime au JOIN anime a ON au.a_id = a.id WHERE au.u_id = ?';
+    $stmt ='SELECT * FROM user_anime au JOIN anime a ON au.a_id = a.id WHERE au.u_id = ?';
     $preparedStmt=$DB->connection->prepare($stmt);
     $preparedStmt->bind_param("i", $user_id);
     $preparedStmt->execute();

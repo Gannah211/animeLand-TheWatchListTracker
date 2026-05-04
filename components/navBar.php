@@ -19,9 +19,6 @@
                         <a class="nav-link " href="/AnimeLand/pages/animeList.php">Anime</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-danger fw-semibold" href="/AnimeLand/pages/deleteAnime.php">Delete Anime</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link " href="/AnimeLand/pages/userProfile.php">Profile</a>
                     </li>
                 </ul>

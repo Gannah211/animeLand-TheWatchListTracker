@@ -5,6 +5,7 @@ $auth->redirectIfNotAuth();
 
 $userObj = new \App\User();
 $userInfo = $userObj->getUserInfo();
+$userObj->deleteAnime();
 $userWatchList = $userObj->getUserWatchList();
 ?>
 <html lang="en">
@@ -29,6 +30,8 @@ $userWatchList = $userObj->getUserWatchList();
             <tr>
                 <th>Anime Title</th>
                 <th>Status</th>
+                <th>Rating</th>
+                <th>Delete anime</th>
             </tr>
             </thead>
             <tbody>
@@ -36,6 +39,14 @@ $userWatchList = $userObj->getUserWatchList();
                 <tr>
                     <td><?php echo $row['title'] ?></td>
                     <td><?php echo $row['watch_status'] ?></td>
+                    <td><?php echo $row['rate'] ?> / 10</td>
+
+                    <td class="text-center">
+                        <form method="POST" class="m-0">
+                            <input type="hidden" name="a_id" value="<?php echo $row['id']; ?>">
+                            <button type="submit" class="btn btn-danger btn-sm rounded-pill px-4 shadow-sm">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             <?php endwhile; ?>
             </tbody>

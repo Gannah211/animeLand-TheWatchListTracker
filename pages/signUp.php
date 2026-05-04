@@ -2,6 +2,8 @@
 require_once "../vendor/autoload.php";
 $authObj = new \App\authenticate();
 $authObj->signUp();
+$authObj->redirectIfAuth();
+
 ?>
 
 <html lang="en">
