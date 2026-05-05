@@ -10,7 +10,7 @@ $authObj->redirectIfAuth();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../assets/bootstrap.css">
+    <link rel="stylesheet" href="../assets/bootstrap-aot.css">
     <link rel="icon" href="../assets/favicon.png" >
     <title>Sign Up</title>
 
@@ -78,7 +78,7 @@ $authObj->redirectIfAuth();
                         </form>
                     </div>
                 </div>
-                <p class="text-center mt-3 text-muted small">
+                <p class="text-center mt-3 text-body small">
                     Already have an account? <a href="signIn.php">Sign in</a>
                 </p>
             </div>

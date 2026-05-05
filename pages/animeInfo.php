@@ -36,7 +36,7 @@ if ($animeId) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../assets/bootstrap.css">
+    <link rel="stylesheet" href="../assets/bootstrap-aot.css">
     <link rel="icon" href="../assets/favicon.png" >
     <title>Anime Info</title>
 </head>
@@ -56,7 +56,9 @@ if ($animeId) {
             <div class="col-md-8 d-flex flex-column justify-content-between">
                 <div>
                     <h1 class="fw-bold text-primary mb-3"><?php echo $anime['title'] ?></h1>
-                    <p class="text-muted"><?php echo $anime['description'] ?></p>
+                    <div class="card border-0 bg-white shadow-sm rounded-4 p-3">
+                    <p class="text-dark"><?php echo $anime['description'] ?></p>
+                    </div>
                 </div>
                 <div class="card border-0 bg-white shadow-sm rounded-4 p-3">
                     <form method="POST" class="d-flex align-items-center gap-3 flex-wrap">
@@ -96,7 +98,7 @@ if ($animeId) {
             <div class="card-body p-4">
 
                 <div class=" d-flex flex-wrap align-items-center gap-2 mb-4">
-                    <span class="fw-semibold text-muted me-2">Seasons:</span>
+                    <span class="fw-semibold text-body me-2">Seasons:</span>
                     <?php for ($i = 0; $i < $anime['num_of__seasons']; $i++): ?>
                         <form method="POST">
                             <input type="hidden" name="a_id" value="<?php echo $animeId; ?>">

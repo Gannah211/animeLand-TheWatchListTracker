@@ -36,7 +36,7 @@
                         <a class="btn btn-primary btn-sm px-3" href="/AnimeLand/pages/signIn.php">Sign In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-primary btn-sm px-3" href="/AnimeLand/pages/signUp.php">Sign Up</a>
+                        <a class="btn btn-secondary btn-sm px-3" href="/AnimeLand/pages/signUp.php">Sign Up</a>
                     </li>
                 </ul>
 

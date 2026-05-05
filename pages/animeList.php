@@ -10,9 +10,9 @@ $allSeries = $animeObj->getAllAnime(); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../assets/bootstrap.css">
+    <link rel="stylesheet" href="../assets/bootstrap-aot.css">
     <link rel="icon" href="../assets/favicon.png" >
-    <link rel="stylesheet" href="../assets/customStyle.css" <?php echo time()?>>
+<!--    <link rel="stylesheet" href="../assets/customStyle.css" --><?php //echo time()?>
     <title>All Animes</title>
     <style>
         .hover-card {
@@ -30,7 +30,7 @@ $allSeries = $animeObj->getAllAnime(); ?>
 
 <div class="container py-5 flex-grow-1">
 
-    <h1 class="fw-bold text-dark mb-4">All Anime</h1>
+    <h1 class="fw-bold text-body mb-4">All Anime</h1>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
         <?php while($row = $allSeries->fetch_assoc()): ?>
@@ -39,7 +39,7 @@ $allSeries = $animeObj->getAllAnime(); ?>
                     <div class="card h-100 border-0 shadow-sm rounded-4 hover-card">
                         <div class="card-body d-flex flex-column justify-content-between p-4">
                             <img src="<?php echo $row['img_url']; ?>" alt="">
-                            <h5 class="card-title fw-bold text-dark mb-3 ">
+                            <h5 class="card-title fw-bold text-body mb-2 mt-3 ">
                                 <?php echo $row['title']; ?>
                             </h5>
                             <span class="text-primary fw-semibold small">View Details →</span>

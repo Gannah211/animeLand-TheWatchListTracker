@@ -5,8 +5,6 @@ use App\Database\DB;
 $DB = new DB();
 
 $auth = new App\authenticate();
-$auth->redirectIfNotAuth();
-
 $auth->signOut();
 ?>
 
@@ -14,12 +12,10 @@ $auth->signOut();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../assets/bootstrap.css">
-    <link rel="icon" href="../assets/favicon.png" >
-    <link rel="stylesheet" href="../assets/customStyle.css" <?php echo time()?>>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <link rel="stylesheet" href="../assets/bootstrap-aot.css">
+    <link rel="stylesheet" href="../assets/home.css">
+    <link rel="icon" href="../assets/favicon.png">
+    <title>Home — Anime Land</title>
 </head>
 <body>
 
@@ -27,22 +23,29 @@ $auth->signOut();
 
 <section class="hero">
     <div class="welcome-card">
+
+        <!-- Red top bar is handled by welcome-card::before in your CSS -->
+
         <?php if (isset($_SESSION['userName'])): ?>
-        <h1 class="greeting text-outline">Hello, <?php echo $_SESSION['userName'] ?>!</h1>
-        <p class="subtitle">Welcome back to Anime Land &nbsp;👋</p>
+            <h1 class="greeting">Hello, <?php echo htmlspecialchars($_SESSION['userName']) ?>!</h1>
+            <p class="subtitle">Welcome back to Anime Land &nbsp;</p>
         <?php else: ?>
-        <h1 class="greeting text-outline">Welcome to Anime Land  </h1>
-        <p class="subtitle">Your personal anime tracker starts here ✨</p>
+            <h1 class="greeting">Welcome to Anime Land</h1>
+            <p class="subtitle">Your personal anime tracker starts here </p>
         <?php endif; ?>
+
         <div class="dots">
             <span></span><span></span><span></span>
         </div>
-        <br>
+
+        <hr class="my-4">
+
         <p class="subtitle">
-            Track what you watch, rate your favorite anime, and never lose track of your progress again 🎬
+            Track what you watch, rate your favourite anime, and never lose your progress again
         </p>
     </div>
 </section>
+
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/animeLand/components/footer.php') ?>
 
 </body>

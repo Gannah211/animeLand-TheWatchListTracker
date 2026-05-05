@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@400;700&display=swap');
+
+:root {
+    --aot-red: #8c1616;
+    --aot-green: #2f3e2e;
+    --aot-parchment: #d9c5b2;
+    --aot-dark: #1a1a1a;
+    --aot-iron: #4a4a4a;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)),
+    url('../assets/bg.jpg'), #121212 ;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    color: var(--aot-parchment);
+}
+
+body > * { position: relative; z-index: 1; }
+
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+}
+
+.welcome-card {
+    background: rgba(26, 26, 26, 0.92);
+    border: 1px solid var(--aot-iron);
+    border-top: 3px solid var(--aot-red);
+    border-radius: 0;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    max-width: 540px;
+    width: 100%;
+    box-shadow:
+            0 4px 32px rgba(140, 22, 22, 0.2),
+            0 1px 6px rgba(0, 0, 0, 0.6);
+    animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Red-to-green accent bar at top of card */
+.welcome-card::before {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 80px;
+    margin: 0 auto 1.75rem;
+    border-radius: 0;
+    background: linear-gradient(90deg, var(--aot-red), var(--aot-green));
+}
+
+.welcome-card .greeting {
+    font-family: 'Special Elite', cursive;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    color: var(--aot-parchment);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-card .subtitle {
+    font-size: 0.95rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+hr {
+    border-color: var(--aot-iron);
+    opacity: 0.6;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 1.75rem;
+}
+
+.dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 0;
+}
+
+.dots span:nth-child(1) { background: var(--aot-red);       opacity: 0.9; }
+.dots span:nth-child(2) { background: var(--aot-parchment); opacity: 0.6; }
+.dots span:nth-child(3) { background: var(--aot-green);     opacity: 0.8; }
